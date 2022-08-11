@@ -1,0 +1,50 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\UrlShortenRequest;
+use App\Http\Resources\UrlResource;
+use App\Models\Url;
+use Facades\App\Services\UrlService; //it is a service class with realtime facade implementation
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
+
+class CustomerController extends Controller
+{
+    public function __construct(protected CustomerService $customerService)
+    {
+        
+    }
+
+    public function index(UrlShortenRequest $request)
+    {
+        $customers = $this->customerService->getFilteredData($request->validated());
+
+        return view();
+    }
+
+    public function getFilteredData($requestData)
+    {
+        $year = $requestData['year'];
+        $month = $requestData['month'];
+
+        $cacheKey = CacheKey::get($month, $year);
+
+        $customers = Cache::remember($cacheKey, 60, function () {
+            $customer = Customer::query();
+            if()
+        });
+
+        return $customers->paginate()
+    }
+
+
+    public function get($month, $year)
+    {
+        if(empty($month) && empty($year)){
+            return 'all';
+        } else if() {
+            return 'month-'.$month;
+        }
+    }
+}

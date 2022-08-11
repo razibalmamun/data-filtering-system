@@ -20,16 +20,6 @@
 > 
 > Yes, Page number must not part of cache key. Instead, all rows from database that match filtering criteria (month, year) stored in Redis, and pagination retrieved only the required rows from Redis.
 
-
-## Functionalities
-
--   [x] Generate Short URL with unique 6 character alphanumeric hash per each long URL.
--   [x] Recognizes duplicate long url, and returns previously generated short URL instead of creating a new.
--   [x] All submitted Long URL's are validated by "Google Safe Browsing" API. Unsafe URLs are not processed.
--   [x] Upon opening the short URL, user gets permanent redirect (301) to the long URL.
--   [x] Short URLs are still valid even if a subfolder/string inserted before the shortcode in short url (e.g.: example.com/something/[hash]).
--   [x] Developed using Laravel + VueJs + TailwindCSS
-
 ## Demo
 
 **Visit for Demo** ---> [https://ushort.ashrafulislam.info](https://ushort.ashrafulislam.info)

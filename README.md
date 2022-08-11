@@ -2,9 +2,9 @@
 
 <p align="center"><a href="https://laravel.com" target="_blank">
 <img src="./github/laravel.svg" width="80"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://redis.io/" target="_blank" rel="noopener noreferrer"><img width="85" src="./github/redis.png" alt="Redis logo"></a>
+<a href="https://redis.io/" target="_blank" rel="noopener noreferrer"><img width="250" src="./github/redis.png" alt="Redis logo"></a>
 <a href="https://www.postgresql.org/" target="_blank">
-      <img alt="PostgreSQL" width="120" src="./github/postgresql.png">
+      <img alt="PostgreSQL" width="80" src="./github/postgresql.png">
     </a>
 </p>
 

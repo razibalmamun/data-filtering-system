@@ -39,7 +39,7 @@ Clone the repository in your local machine using `git clone https://github.com/r
 4.  run command `composer install`
 5.  run command `php artisan migrate`
 8.  run command `php artisan serve`
-    > ready to browse. Just open your browser and enter to `http://localhost:8000`
+9.  ready to browse. Just open your browser and enter to `http://localhost:8000`
 
 -   Laravel part
     -   Developed following **SOLID** _Principles_    

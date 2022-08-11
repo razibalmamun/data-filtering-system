@@ -11,10 +11,10 @@
 ## Features
 
 > Using Laravel, PostgreSQL, and Redis, implemented a system that allows filtering the attached dataset by person's birth year, or birth month. or both.
-
-Matching results cached in Redis for 60 seconds. Following requests for the same combination of filtering parameters (birth year, birth month) not query database before cache expires. 
-
-If user changes filter parameters, Redis cache for old results can invalidated.
+> 
+> Matching results cached in Redis for 60 seconds. Following requests for the same combination of filtering parameters (birth year, birth month) not query database before cache expires. 
+> 
+> If user changes filter parameters, Redis cache for old results can invalidated.
 
 Displaying the users in a paginated table, with 20 rows per page. Pagination retrieved data from Redis cache if it is available.
 

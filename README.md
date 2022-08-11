@@ -8,6 +8,19 @@
     </a>
 </p>
 
+## Features
+
+> Using Laravel, PostgreSQL, and Redis, implemented a system that allows filtering the attached dataset by person's birth year, or birth month. or both.
+
+Matching results cached in Redis for 60 seconds. Following requests for the same combination of filtering parameters (birth year, birth month) not query database before cache expires. 
+
+If user changes filter parameters, Redis cache for old results can invalidated.
+
+Displaying the users in a paginated table, with 20 rows per page. Pagination retrieved data from Redis cache if it is available.
+
+Yes, Page number must not part of cache key. Instead, all rows from database that match filtering criteria (month, year) stored in Redis, and pagination retrieved only the required rows from Redis.
+
+
 ## Functionalities
 
 -   [x] Generate Short URL with unique 6 character alphanumeric hash per each long URL.
@@ -44,10 +57,6 @@ Clone the repository in your local machine using `git clone https://github.com/r
     > At this point you have the application ready to short urls
     > ready to browse. Just open your browser and navigate to
     > `http://localhost:8000` and you should see the URL-Shortener site home page
-
-## Features
-
-> Below points may seem over-engineering for a project like this. Because project requirements were basic and size was small too. But the below points are done to keep the project highly extendable and to demonstrate the need or importance or usability of these in bigger projects.
 
 -   Laravel part
     -   Developed following **SOLID** _Principles_

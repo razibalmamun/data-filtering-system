@@ -20,9 +20,6 @@
 > 
 > Yes, Page number must not part of cache key. Instead, all rows from database that match filtering criteria (month, year) stored in Redis, and pagination retrieved only the required rows from Redis.
 
-## Demo
-
-**Visit for Demo** ---> [https://ushort.ashrafulislam.info](https://ushort.ashrafulislam.info)
 
 ## Local Installation
 
@@ -30,9 +27,9 @@ Clone the repository in your local machine using `git clone https://github.com/r
 
 ### _Requirements_ for Local Environment
 
--   [x] PHP Version 8.0
--   [x] NodeJs Version 14 (Have tested on v14, but should be okay with v12 also)
--   [x] MySql version 5.7
+-   [x] PHP Version 7.4 | 8.1
+-   [x] PostgreSQL Version 13.2-2
+-   [x] Redis Server Version 3.0.504
 
 ### Running the Application
 
@@ -41,28 +38,12 @@ Clone the repository in your local machine using `git clone https://github.com/r
 3.  update `.env` file database informations according to your local machine.
 4.  run command `composer install`
 5.  run command `php artisan migrate`
-6.  run command `npm install`
-7.  run command `npm run dev` or `npm run prod`
 8.  run command `php artisan serve`
-    > At this point you have the application ready to short urls
-    > ready to browse. Just open your browser and navigate to
-    > `http://localhost:8000` and you should see the URL-Shortener site home page
+    > ready to browse. Just open your browser and enter to `http://localhost:8000`
 
 -   Laravel part
-    -   Developed following **SOLID** _Principles_
+    -   Developed following **SOLID** _Principles_    
+    -   Seperate **Form Request** classes for filter form
     -   Followed **Service** _Pattern_ where application
-    -   Seperate **Form Request** classes for each forms
--   VueJs part
-    -   **Reusable Component** based structure
-    -   **Loader** on Axios call
-    -   **Vue3 Composition API** used
--   Used TailwindCSS
-
-## Scope of Improvements
-
-1. **Unit Testing** shoudld be implemented.
-2. **User Authentication and Api** can be provided to use this in a bigger scale.
-
-## To Do
-
--   [ ] Unit Test Cases
+-   Used PostgreSQL
+-   Used Redis

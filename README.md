@@ -1,68 +1,69 @@
-<<<<<<< HEAD
-# top-secret-cia
-=======
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Top Secret CIA Database
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<p align="center"><a href="https://laravel.com" target="_blank">
+<img src="./github/laravel.svg" width="80"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://redis.io/" target="_blank" rel="noopener noreferrer"><img width="85" src="./github/redis.png" alt="Redis logo"></a>
+<a href="https://www.postgresql.org/" target="_blank">
+      <img alt="PostgreSQL" width="120" src="./github/postgresql.png">
+    </a>
 </p>
 
-## About Laravel
+## Functionalities
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   [x] Generate Short URL with unique 6 character alphanumeric hash per each long URL.
+-   [x] Recognizes duplicate long url, and returns previously generated short URL instead of creating a new.
+-   [x] All submitted Long URL's are validated by "Google Safe Browsing" API. Unsafe URLs are not processed.
+-   [x] Upon opening the short URL, user gets permanent redirect (301) to the long URL.
+-   [x] Short URLs are still valid even if a subfolder/string inserted before the shortcode in short url (e.g.: example.com/something/[hash]).
+-   [x] Developed using Laravel + VueJs + TailwindCSS
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Demo
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Visit for Demo** ---> [https://ushort.ashrafulislam.info](https://ushort.ashrafulislam.info)
 
-## Learning Laravel
+## Local Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Clone the repository in your local machine using `git clone https://github.com/razibalmamun/top-secret-cia.git`
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### _Requirements_ for Local Environment
 
-## Laravel Sponsors
+-   [x] PHP Version 8.0
+-   [x] NodeJs Version 14 (Have tested on v14, but should be okay with v12 also)
+-   [x] MySql version 5.7
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Running the Application
 
-### Premium Partners
+1.  Open terminal/command promt from inside the `project folder` folder
+2.  run command `cp .env.example .env`
+3.  update `.env` file database informations according to your local machine.
+4.  run command `composer install`
+5.  run command `php artisan migrate`
+6.  run command `npm install`
+7.  run command `npm run dev` or `npm run prod`
+8.  run command `php artisan serve`
+    > At this point you have the application ready to short urls
+    > ready to browse. Just open your browser and navigate to
+    > `http://localhost:8000` and you should see the URL-Shortener site home page
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Features
 
-## Contributing
+> Below points may seem over-engineering for a project like this. Because project requirements were basic and size was small too. But the below points are done to keep the project highly extendable and to demonstrate the need or importance or usability of these in bigger projects.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-   Laravel part
+    -   Developed following **SOLID** _Principles_
+    -   Followed **Service** _Pattern_ where application
+    -   Seperate **Form Request** classes for each forms
+-   VueJs part
+    -   **Reusable Component** based structure
+    -   **Loader** on Axios call
+    -   **Vue3 Composition API** used
+-   Used TailwindCSS
 
-## Code of Conduct
+## Scope of Improvements
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. **Unit Testing** shoudld be implemented.
+2. **User Authentication and Api** can be provided to use this in a bigger scale.
 
-## Security Vulnerabilities
+## To Do
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
->>>>>>> e2014f4d0f4ac25b0bc145602053ab1ebb7a547e
+-   [ ] Unit Test Cases

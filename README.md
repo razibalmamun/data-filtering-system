@@ -15,10 +15,10 @@
 > Matching results cached in Redis for 60 seconds. Following requests for the same combination of filtering parameters (birth year, birth month) not query database before cache expires. 
 > 
 > If user changes filter parameters, Redis cache for old results can invalidated.
-
-Displaying the users in a paginated table, with 20 rows per page. Pagination retrieved data from Redis cache if it is available.
-
-Yes, Page number must not part of cache key. Instead, all rows from database that match filtering criteria (month, year) stored in Redis, and pagination retrieved only the required rows from Redis.
+> 
+> Displaying the users in a paginated table, with 20 rows per page. Pagination retrieved data from Redis cache if it is available.
+> 
+> Yes, Page number must not part of cache key. Instead, all rows from database that match filtering criteria (month, year) stored in Redis, and pagination retrieved only the required rows from Redis.
 
 
 ## Functionalities

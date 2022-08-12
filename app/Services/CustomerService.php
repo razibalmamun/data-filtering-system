@@ -25,35 +25,42 @@ class CustomerService
         $month = $requestData['month']??'';
 
         $data = [];
+        $cacheKey =  $this->cacheKey->get($month, $year);
+        if (!Cache::tags('customer')->has($cacheKey)) {
+            Cache::tags('customer')->flush();
+        }
 
         if(empty($year) && empty($month)) {
-            $customers = Customer::paginate(20);            
+            $customers = Customer::orderBy('id', 'desc');      
         } else {
-            $cacheKey =  $this->cacheKey->get($month, $year);
-            $customers = Cache::tags('cia')->remember($cacheKey, 60, function () use ($year, $month) {
-                Cache::tags('cia')->flush();
-                $customer = Customer::query();
-                if($year) {
-                    $customer = $customer->whereYear('birthday', $year);
-                }
-                if($month) {
-                    $customer = $customer->whereMonth('birthday', $month);
-                }
-                return $customer->get();
-            });
-            $customers = $customers->paginate(20);
-            $customers = $customers->appends(
-                [
-                    'year' => $year,
-                    'month' => $month,
-                ]
-            );
+            $customers = Cache::tags('customer')->remember($cacheKey, 60, function () use ($year, $month) {
+                return $this->createNewCustomerCache($year, $month);
+            });            
         }
+
+        $customers = $customers->paginate(20);
+        $customers = $customers->appends(
+            [
+                'year' => $year,
+                'month' => $month,
+            ]
+        );
 
         $data['customers'] = $customers;
         $data['year'] = $year;
         $data['month'] = $month;
 
         return $data;
+    }
+
+    public function createNewCustomerCache($year, $month) {
+        $customer = Customer::query();
+        if($year) {
+            $customer = $customer->whereYear('birthday', $year);
+        }
+        if($month) {
+            $customer = $customer->whereMonth('birthday', $month);
+        }
+        return $customer->orderBy('id', 'desc')->get();
     }
 }

@@ -2,12 +2,17 @@
 
 namespace Tests\Unit;
 
+use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Tests\TestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+
+use App\Models\Customer;
 
 class CustomerFilterTest extends TestCase
 {
+
+
     public function testGetAllCustomers()
     {
         $response = $this->get('/');

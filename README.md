@@ -49,7 +49,7 @@ You can find any version you want to install at [enterprisedb.com/download-postg
 9.  ready to browse. Just open your browser and enter to `http://localhost:8000`
 
 ### Import Customer Data From CSV to PostgreSQL
-You can find `test-data\test-data.csv` csv file from inside the `project folder`. Then you can run `SQL Shell (psql)` or login your `PostgreSQL`. To connect using database then right click on database name. Now you can click `PSQL Tool`. After click `PSQL Tool` in right your side will open terminal to write sql command.
+You can find `test-data\test-data.csv` csv file from inside the `project folder`. Then you can run `SQL Shell (psql)` or login your `PostgreSQL`. To connect using database then right click on database name. Now you can click `PSQL Tool`. After click `PSQL Tool` in your right side will open terminal to write sql command.
 
 For example my `test-data.csv` file location is `C:\Users\User\Downloads\test-data.csv`. So run bellow command on your terminal.
 

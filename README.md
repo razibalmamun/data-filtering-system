@@ -51,6 +51,8 @@ You can find any version you want to install at [enterprisedb.com/download-postg
 ### Import Customer Data From CSV to PostgreSQL
 You can find `test-data\test-data.csv` csv file from inside the `project folder`. Then you can run `SQL Shell (psql)` or login your `PostgreSQL`. To connect using database then right click on database name. Now you can click `PSQL Tool`. After click `PSQL Tool` in your right side will open terminal to write sql command.
 
+<img width="820" src="./github/fsql.jpg" alt="PSQL Tool">
+
 For example my `test-data.csv` file location is `C:\Users\User\Downloads\test-data.csv`. So run bellow command on your terminal.
 
 `COPY customers (id, email, name, birthday, phone, ip, country) FROM 'C:\Users\User\Downloads\test-data.csv' DELIMITER ',' CSV HEADER;`

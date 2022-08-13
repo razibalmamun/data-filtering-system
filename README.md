@@ -23,7 +23,7 @@
 
 ## Local Installation
 
-Clone the repository in your local machine using `git clone https://github.com/razibalmamun/top-secret-cia.git`
+Clone the repository in your local machine using `git clone https://github.com/razibalmamun/data-filtering-system.git`
 
 ### Requirements for Local Environment
 

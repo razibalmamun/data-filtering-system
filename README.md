@@ -38,7 +38,7 @@ So, if you using Laragon you can follow this link to install `Redis` --> [Redis 
 ### Adding PostgreSQL to Laragon
 You can find any version you want to install at [enterprisedb.com/download-postgresql-binaries](https://www.enterprisedb.com/download-postgresql-binaries) and make sure it support your windows machine. So, if you using Laragon you can follow this link to install `PostgreSQL` --> [PostgreSQL on Laragon](https://dev.to/dendihandian/adding-postgresql-to-laragon-2kde)
 
-Note: if you face any issue about of `pdo_pgsql` extension like laravel showing error `extension not found` please write full extension name like `php_pdo_pgsql.dll` nor only `pdo_pgsql` in your php ini file.
+Note: if you face any issue about of `pdo_pgsql` extension like laravel showing error `extension not found` please write full extension name like `php_pdo_pgsql.dll` not only `pdo_pgsql` in your php ini file.
 
 `extension=php_pdo_pgsql.dll`
 `extension=php_pgsql.dll`

@@ -47,6 +47,7 @@ You can find any version you want to install from [enterprisedb.com/download-pos
 5.  run command `php artisan migrate`
 6.  run command `php artisan serve`
 7.  Now it's ready to browse. Just open your browser and enter `http://localhost:8000`
+8.  Run command `php artisan test` (Unit & Feature Testing)
 
 >Note: if you face any issue about `pdo_pgsql` extension like laravel error `extension not found`, please write full extension name like `php_pdo_pgsql.dll`, >not only `pdo_pgsql` in your `php ini` file.
 >
@@ -81,4 +82,4 @@ So, for example my `test-data.csv` file location is `H:\data-filtering-system\te
     -   Followed **Service Pattern** in the application
 -   Used PostgreSQL
 -   Used Redis
--   Unit Testing implemented. run command `php artisan test` 
+-   Unit and Feature Testing implemented. run command `php artisan test` 

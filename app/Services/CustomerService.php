@@ -19,7 +19,7 @@ class CustomerService
      *
      * @return \Illuminate\Http\Response
      */
-    public function getFilteredData($requestData) : Array
+    public function getFilteredData($requestData) : Object
     {
         $year = $requestData['year']??'';
         $month = $requestData['month']??'';
@@ -34,7 +34,7 @@ class CustomerService
             $customers = Customer::orderBy('id', 'desc');      
         } else {
             $customers = Cache::tags('customer')->remember($cacheKey, 60, function () use ($year, $month) {
-                return $this->createNewCustomerCache($year, $month);
+                return $this->getCustomers($year, $month);
             });            
         }
 
@@ -45,15 +45,11 @@ class CustomerService
                 'month' => $month,
             ]
         );
-
-        $data['customers'] = $customers;
-        $data['year'] = $year;
-        $data['month'] = $month;
-
-        return $data;
+        
+        return $customers;
     }
 
-    public function createNewCustomerCache($year, $month) {
+    public function getCustomers($year, $month) {
         $customer = Customer::query();
         if($year) {
             $customer = $customer->whereYear('birthday', $year);

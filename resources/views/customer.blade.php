@@ -25,11 +25,11 @@
         <main>
             <div class="container py-4">
                 <header class="pb-3 mb-4 border-bottom">
-                Top Secret CIA database
+                Data Filtering System
                 </header>
 
                 <div class="p-5 mb-4 bg-light rounded-3">
-                    <form class="row g-3" method="get" action="{{route('customerFilter')}}">
+                    <form class="row g-3" method="get" action="{{route('customer')}}">
                         <div class="col-auto">
                             <label for="inputPassword2" class="visually-hidden">Birth Year</label>
                             <input type="text" name="year" value="{{old('year', $year)}}" class="form-control" id="inputPassword2" placeholder="Birth Year">

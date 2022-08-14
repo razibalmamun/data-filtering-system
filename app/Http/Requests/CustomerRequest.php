@@ -7,6 +7,8 @@ use Illuminate\Contracts\Validation\Validator;
 
 class CustomerRequest extends FormRequest
 {
+    protected $redirectRoute = 'customer';
+
     /**
      * Determine if the user is authorized to make this request.
      *

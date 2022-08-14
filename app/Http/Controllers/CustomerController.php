@@ -19,13 +19,13 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request) {
-        $customers = $this->customerService->getFilteredData($request->all());
-        return view('customer', $customers);
-    }
-
-    public function customerFilter(CustomerRequest $request) {
+    public function index(CustomerRequest $request) {
         $customers = $this->customerService->getFilteredData($request->validated());
-        return view('customer', $customers);
+
+        $data['year'] = $request->input('year');
+        $data['month'] = $request->input('month');        
+        $data['customers']  = $customers; 
+          
+        return view('customer', $data);
     }
 }

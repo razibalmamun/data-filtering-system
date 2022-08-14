@@ -15,4 +15,3 @@ use App\Http\Controllers\CustomerController;
 */
 
 Route::get('/', [CustomerController::class, 'index'])->name('customer');
-Route::get('/filter', [CustomerController::class, 'customerFilter'])->name('customerFilter');

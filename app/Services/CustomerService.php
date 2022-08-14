@@ -26,14 +26,14 @@ class CustomerService
 
         $data = [];
         $cacheKey =  $this->cacheKey->get($month, $year);
-        if (!Cache::tags('customer')->has($cacheKey)) {
-            Cache::tags('customer')->flush();
+        if (!Cache::tags('customers')->has($cacheKey)) {
+            Cache::tags('customers')->flush();
         }
 
         if(empty($year) && empty($month)) {
             $customers = Customer::orderBy('id', 'desc');      
         } else {
-            $customers = Cache::tags('customer')->remember($cacheKey, 60, function () use ($year, $month) {
+            $customers = Cache::tags('customers')->remember($cacheKey, 60, function () use ($year, $month) {
                 return $this->getCustomers($year, $month);
             });            
         }

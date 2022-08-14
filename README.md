@@ -58,9 +58,9 @@ You can find `test-data\test-data.csv` csv file inside the `project folder`. The
 
 <img width="820" src="./github/fsql.jpg" alt="PSQL Tool">
 
-For example my `test-data.csv` file location is `C:\Users\User\Downloads\test-data.csv`. So, run following command on your terminal.
+For example my `test-data.csv` file location is `E:\sender.net\apps\test-data\test-data.csv`. So, run following command on your terminal.
 
-`COPY customers (id, email, name, birthday, phone, ip, country) FROM 'C:\Users\User\Downloads\test-data.csv' DELIMITER ',' CSV HEADER;`
+`COPY customers (id, email, name, birthday, phone, ip, country) FROM 'E:\sender.net\apps\test-data\test-data.csv' DELIMITER ',' CSV HEADER;`
 
 ## Development Features
 -   Laravel part

@@ -38,11 +38,6 @@ So, if you are using Laragon, you can follow this link to install `Redis` --> [R
 ### Adding PostgreSQL to Laragon
 You can find any version you want to install from [enterprisedb.com/download-postgresql-binaries](https://www.enterprisedb.com/download-postgresql-binaries) and make sure it supports your windows machine. So, if you are using Laragon you can follow this link to install `PostgreSQL` --> [PostgreSQL on Laragon](https://dev.to/dendihandian/adding-postgresql-to-laragon-2kde)
 
-Note: if you face any issue about `pdo_pgsql` extension like laravel error `extension not found`, please write full extension name like `php_pdo_pgsql.dll`, not only `pdo_pgsql` in your `php ini` file.
-
-`extension=php_pdo_pgsql.dll`
-`extension=php_pgsql.dll`
-
 ### Running the Application
 
 1.  Open terminal/command promt from inside the `project folder` folder
@@ -53,14 +48,25 @@ Note: if you face any issue about `pdo_pgsql` extension like laravel error `exte
 6.  run command `php artisan serve`
 7.  Now it's ready to browse. Just open your browser and enter `http://localhost:8000`
 
+>Note: if you face any issue about `pdo_pgsql` extension like laravel error `extension not found`, please write full extension name like `php_pdo_pgsql.dll`, >not only `pdo_pgsql` in your `php ini` file.
+>
+>`extension=php_pdo_pgsql.dll`
+>`extension=php_pgsql.dll`
+
 ### Import Customer Data From CSV to PostgreSQL
 You can find `test-data\test-data.csv` csv file inside the `project folder`. Then you can run `SQL Shell (psql)` or login into your `PostgreSQL`. To connect using database, right click on database name. Now you can click `PSQL Tool`. After clicking `PSQL Tool` a tarminal will open on your right side to write sql command.
 
 <img width="820" src="./github/fsql.jpg" alt="PSQL Tool">
 
-For example my `test-data.csv` file location is `E:\sender.net\apps\test-data\test-data.csv`. So, run following command on your terminal.
+>Note: If you face `PSQL Tool` issue like warning `Please configure the PostgreSQL Binary Path in the Preferences dialog.` So, following the steps.
 
-`COPY customers (id, email, name, birthday, phone, ip, country) FROM 'E:\sender.net\apps\test-data\test-data.csv' DELIMITER ',' CSV HEADER;`
+1. Click Files -> preferences -> Binary path
+2. ProgresSQL Binary path on Database server PostgreSQL 13: `C:\laragon\bin\postgresql\pgsql\bin`
+3. Finally `Save`
+
+So, for example my `test-data.csv` file location is `H:\data-filtering-system\test-data\test-data.csv`. So, run following command on your terminal.
+
+`COPY customers (id, email, name, birthday, phone, ip, country) FROM 'H:\data-filtering-system\test-data\test-data.csv' DELIMITER ',' CSV HEADER;`
 
 ## Development Features
 -   Laravel part

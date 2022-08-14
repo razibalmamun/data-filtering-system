@@ -68,6 +68,12 @@ So, for example my `test-data.csv` file location is `H:\data-filtering-system\te
 
 `COPY customers (id, email, name, birthday, phone, ip, country) FROM 'H:\data-filtering-system\test-data\test-data.csv' DELIMITER ',' CSV HEADER;`
 
+> :warning: If you face any error like `ERROR: missing data for column "email" CONTEXT: COPY customers, line 100002: ""` after run psql command.
+> Run `test-data.csv` csv file on Notepad or Notepad++ then go line number 100003. Please remove here free space that's line number 100002 and 100003 and save. Now you can try again to run sql copy command.
+
+<img src="./github/psql_command_01.png" width="820">
+<img src="./github/psql_command_02.png" width="820">
+
 ## Development Features
 -   Laravel part
     -   Developed by following **SOLID Principles**    

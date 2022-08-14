@@ -18,7 +18,8 @@
 > 
 > Displaying the users in a paginated table, with 20 rows per page. Pagination retrieves data from Redis cache if it is available.
 > 
-> Page number is not part of the cache key. Instead, all rows from database that match filtering criteria (month, year) stored in Redis, and pagination retrieves only the required rows from Redis.
+> Page number is not part of the cache key. Instead, all rows from database that match filtering criteria (month, year) stored in Redis, and pagination retrieves only the required rows from Redis. 
+> Unit and Feature Testing implemented.
 
 
 ## Local Installation

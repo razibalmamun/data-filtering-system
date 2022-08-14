@@ -8,11 +8,6 @@ use App\Services\CacheKey;
 
 class CustomerServiceTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
     public function test_get_all_customers()
     {
         $customerService = new CustomerService(new CacheKey());
@@ -38,6 +33,20 @@ class CustomerServiceTest extends TestCase
     {
         $customerService = new CustomerService(new CacheKey());
         $customers = $customerService->getFilteredData(['year'  =>  1928, 'month'  =>  12]);
+        $this->assertNotEmpty($customers);
+    }
+
+    public function test_cache_key()
+    {
+        $cacheKey = new CacheKey();
+        $getCacheKey = $cacheKey->get(2018, 12);
+        $this->assertNotEmpty($getCacheKey);
+    }
+
+    public function test_get_customer()
+    {
+        $customerService = new CustomerService(new CacheKey());
+        $customers = $customerService->getCustomers(1930, 11);
         $this->assertNotEmpty($customers);
     }
 }

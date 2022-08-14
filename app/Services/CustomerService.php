@@ -21,7 +21,7 @@ class CustomerService
      */
     public function getFilteredData($requestData) : Object
     {
-        $year = $requestData['year']??'';
+        $year =  $requestData['year']??'';
         $month = $requestData['month']??'';
 
         $data = [];
